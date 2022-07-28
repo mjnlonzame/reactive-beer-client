@@ -1,11 +1,19 @@
 package guru.springframework.beerclient.service;
 
 import guru.springframework.beerclient.model.BeerDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
+@RequiredArgsConstructor
+@Service
 public class BeerClientImpl implements BeerClient {
+
+    private final WebClient webClient;
+
     @Override
     public Mono<ResponseEntity> createBeer(BeerDto beerDto) {
         return null;
