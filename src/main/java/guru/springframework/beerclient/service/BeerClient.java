@@ -1,7 +1,7 @@
 package guru.springframework.beerclient.service;
 
 import guru.springframework.beerclient.model.BeerDto;
-import org.springframework.data.domain.Pageable;
+import guru.springframework.beerclient.model.BeerPagedList;
 import org.springframework.http.ResponseEntity;
 import reactor.core.publisher.Mono;
 
@@ -11,7 +11,7 @@ public interface BeerClient {
 
     Mono<BeerDto> getBeerById(String id, boolean showInventoryOnHand);
 
-    Mono<Pageable> listBeers(int pageNumber, int pageSize, String beerName, String beerStyle, boolean showInventoryOnHand);
+    Mono<BeerPagedList> listBeers(Integer pageNumber, Integer pageSize, String beerName, String beerStyle, Boolean showInventoryOnHand);
 
     Mono<BeerDto> getBeerByUpc(String upc);
 
